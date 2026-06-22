@@ -1,5 +1,5 @@
 // src/App.jsx
-import AnaSayfa from "./Pages/AnaSayfa";
+import AnaSayfa from "./pages/AnaSayfa";
 
 function App() {
   return <AnaSayfa />;
