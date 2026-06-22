@@ -9,4 +9,8 @@ Currently, two official plugins are available:
 
 ![Proje Ekran Görüntüsü](./images/image.png)
 
+![Proje Ekleme Ekran Görüntüsü](./images/ekleme.png)
+
+![Proje Güncelleme Ekran Görüntüsü](./images/guncelleme.png)
+
 ## [Proje Netlify Linki](https://film-dizi-izleme-listesi.vercel.app/)
