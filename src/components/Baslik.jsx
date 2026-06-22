@@ -1,5 +1,4 @@
-// src/Components/Baslik.jsx
-// Üst başlık bileşeni
+
 
 import React from "react";
 

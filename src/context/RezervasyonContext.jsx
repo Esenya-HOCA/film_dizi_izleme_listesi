@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import { v4 as uuidOlustur } from 'uuid';
 
-// ─── LocalStorage Yardımcıları ───────────────────────────────────────────────
 const DEPOLAMA_ANAHTARI = 'otel_rezervasyonlari';
 
 const localStorage_oku = () => {
@@ -17,14 +16,12 @@ const localStorage_yaz = (rezervasyonlar) => {
   localStorage.setItem(DEPOLAMA_ANAHTARI, JSON.stringify(rezervasyonlar));
 };
 
-// ─── Başlangıç Durumu ────────────────────────────────────────────────────────
 const baslangicDurumu = {
   rezervasyonlar: localStorage_oku(),
   yukleniyor: false,
   hata: null,
 };
 
-// ─── Reducer ─────────────────────────────────────────────────────────────────
 const rezervasyonReducer = (durum, eylem) => {
   switch (eylem.tip) {
     case 'REZERVASYON_EKLE': {
@@ -49,13 +46,11 @@ const rezervasyonReducer = (durum, eylem) => {
   }
 };
 
-// ─── Context ─────────────────────────────────────────────────────────────────
 const RezervasyonContext = createContext(null);
 
 export const RezervasyonSaglayici = ({ children }) => {
   const [durum, gonder] = useReducer(rezervasyonReducer, baslangicDurumu);
 
-  // ── CRUD İşlemleri ──
   const rezervasyonEkle = (formVerisi) => {
     const yeniRezervasyona = {
       ...formVerisi,
@@ -79,7 +74,6 @@ export const RezervasyonSaglayici = ({ children }) => {
     return durum.rezervasyonlar.find((r) => r.id === id) || null;
   };
 
-  // ── Hesaplama Yardımcıları ──
   const geceSayisiHesapla = (giris, cikis) => {
     if (!giris || !cikis) return 0;
     const ms = new Date(cikis) - new Date(giris);

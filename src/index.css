@@ -1,11 +1,8 @@
-/* src/index.css */
-/* SineLog - Film & Dizi İzleme Uygulaması Stilleri */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
 
-/* ── RENK PALETİ ── */
 :root {
   --renk-arkaplan: #0d0f14;
   --renk-yuzeyi: #161a23;
@@ -13,7 +10,6 @@
   --renk-kart-hover: #252b3b;
   --renk-sinir: #2a3145;
   --renk-vurgu: #e8b400;
-  /* Altın sarısı – sinema perdesi */
   --renk-vurgu-acik: #ffd23f;
   --renk-izlendi: #22c55e;
   --renk-izleniyor: #3b82f6;
@@ -38,7 +34,6 @@ body {
   min-height: 100vh;
 }
 
-/* ── HEADER ── */
 .app-header {
   background: linear-gradient(135deg, #0d0f14 0%, #161a23 100%);
   border-bottom: 2px solid var(--renk-vurgu);
@@ -125,14 +120,12 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ── ANA İÇERİK ── */
 .ana-icerik {
   max-width: 1400px;
   margin: 0 auto;
   padding: 1.5rem 2rem;
 }
 
-/* ── ÜST KONTROLLER ── */
 .ust-kontroller {
   display: flex;
   gap: 1rem;
@@ -141,7 +134,6 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* ── FİLTRE ÇUBUĞU ── */
 .filtre-cubugu {
   flex: 1;
   min-width: 280px;
@@ -217,7 +209,6 @@ body {
   color: var(--renk-metin-soluk);
 }
 
-/* ── EKLE BUTONU ── */
 .btn-ekle {
   background: var(--renk-vurgu);
   color: #000;
@@ -237,14 +228,12 @@ body {
   transform: translateY(-1px);
 }
 
-/* ── KART IZGARASI ── */
 .kart-izgarasi {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem;
 }
 
-/* ── İÇERİK KARTI ── */
 .icerik-karti {
   background: var(--renk-kart);
   border: 1px solid var(--renk-sinir);
@@ -416,7 +405,6 @@ body {
   font-family: var(--font-govde);
 }
 
-/* ── BOŞ DURUM ── */
 .bos-durum {
   text-align: center;
   padding: 5rem 2rem;
@@ -436,7 +424,6 @@ body {
   max-width: 360px;
 }
 
-/* ── MODAL ── */
 .modal-arka-plan {
   position: fixed;
   inset: 0;
@@ -488,7 +475,6 @@ body {
   color: var(--renk-metin);
 }
 
-/* ── FORM ── */
 .icerik-formu {
   padding: 1.5rem;
   display: flex;
@@ -613,7 +599,6 @@ body {
   background: var(--renk-vurgu-acik);
 }
 
-/* ── BİLDİRİM ── */
 .bildirim {
   position: fixed;
   top: 1.25rem;
@@ -650,7 +635,6 @@ body {
   }
 }
 
-/* ── KAYDIRMA ÇUBUĞU ── */
 ::-webkit-scrollbar {
   width: 6px;
 }

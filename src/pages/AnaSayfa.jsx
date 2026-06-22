@@ -1,12 +1,10 @@
-// src/Pages/AnaSayfa.jsx
-// Ana sayfa - listeleme, ekleme, güncelleme, silme işlemlerini yönetir
 
 import React, { useState, useMemo } from "react";
 import { useIcerikListesi } from "../hooks/useIcerikListesi";
-import IcerikKarti from "../Components/IcerikKarti";
-import IcerikFormu from "../Components/IcerikFormu";
-import FiltreCubugu from "../Components/FiltreCubugu";
-import Baslik from "../Components/Baslik";
+import IcerikKarti from "../components/IcerikKarti";
+import IcerikFormu from "../components/IcerikFormu";
+import FiltreCubugu from "../components/FiltreCubugu";
+import Baslik from "../components/Baslik";
 
 function AnaSayfa() {
   const { icerikListesi, icerikEkle, icerikGuncelle, icerikSil, istatistikler } =
@@ -23,7 +21,6 @@ function AnaSayfa() {
     siralama: "yeni",
   });
 
-  // Filtrelenmiş ve sıralanmış liste (LİSTELEME işlemi)
   const filtrelenmisListe = useMemo(() => {
     let liste = [...icerikListesi];
 
@@ -65,25 +62,21 @@ function AnaSayfa() {
     setFiltreler((onceki) => ({ ...onceki, [alan]: deger }));
   };
 
-  // Bildirim gösterici
   const bildirimGoster = (mesaj, tur = "basari") => {
     setBildirim({ mesaj, tur });
     setTimeout(() => setBildirim(null), 3000);
   };
 
-  // EKLE işlemi
   const yeniIcerikAc = () => {
     setDuzenlenecekIcerik(null);
     setFormAcikMi(true);
   };
 
-  // GÜNCELLE işlemi - formu aç
   const duzenlemeyeAc = (icerik) => {
     setDuzenlenecekIcerik(icerik);
     setFormAcikMi(true);
   };
 
-  // Kaydet (Ekle veya Güncelle)
   const kaydet = (formVerisi) => {
     if (duzenlenecekIcerik) {
       icerikGuncelle(formVerisi);
@@ -94,7 +87,6 @@ function AnaSayfa() {
     }
   };
 
-  // SİL işlemi
   const icerikSilIslem = (icerikId) => {
     const silinecek = icerikListesi.find((i) => i.id === icerikId);
     icerikSil(icerikId);

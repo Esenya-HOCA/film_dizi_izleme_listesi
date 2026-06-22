@@ -1,5 +1,3 @@
-// src/Components/IcerikKarti.jsx
-// Tek bir film/dizi kaydını gösteren kart bileşeni
 
 import React, { useState } from "react";
 

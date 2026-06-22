@@ -1,8 +1,6 @@
-// src/Components/IcerikFormu.jsx
-// İçerik ekleme ve düzenleme formu (modal)
 
 import React, { useState, useEffect } from "react";
-import { KATEGORI_LISTESI, DURUM_LISTESI, TUR_LISTESI, boslkIcerik } from "../Interfaces/IcerikArayuzu";
+import { KATEGORI_LISTESI, DURUM_LISTESI, TUR_LISTESI, boslkIcerik } from "../interfaces/IcerikArayuzu";
 
 function IcerikFormu({ gosterilsinMi, kapatilsinMi, kaydedilsinMi, duzenlenecekIcerik }) {
   const [formVerisi, setFormVerisi] = useState(boslkIcerik());

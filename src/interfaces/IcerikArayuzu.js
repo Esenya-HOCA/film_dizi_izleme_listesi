@@ -1,5 +1,3 @@
-// src/Interfaces/Icerik.ts
-// Film ve dizi için temel veri modeli
 
 export const KATEGORI_LISTESI = ["Film", "Dizi", "Belgesel", "Anime"];
 
@@ -18,10 +16,7 @@ export const TUR_LISTESI = [
   "Suç",
 ];
 
-/**
- * @typedef {Object} Icerik
- * Film veya dizi kaydı için kullanılan arayüz
- */
+
 export const boslkIcerik = () => ({
   id: "",
   baslik: "",

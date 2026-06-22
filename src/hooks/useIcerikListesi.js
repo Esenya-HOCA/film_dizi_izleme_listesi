@@ -1,5 +1,3 @@
-// src/hooks/useIcerikListesi.js
-// LocalStorage ile CRUD işlemlerini yöneten özel hook
 
 import { useState, useEffect } from "react";
 
@@ -8,13 +6,11 @@ const DEPOLAMA_ANAHTARI = "izleme_listesi";
 export function useIcerikListesi() {
   const [icerikListesi, setIcerikListesi] = useState([]);
 
-  // Uygulama açıldığında LocalStorage'dan verileri yükle
   useEffect(() => {
     const kaydedilenVeri = localStorage.getItem(DEPOLAMA_ANAHTARI);
     if (kaydedilenVeri) {
       setIcerikListesi(JSON.parse(kaydedilenVeri));
     } else {
-      // Örnek başlangıç verileri
       const ornekVeriler = [
         {
           id: "1",
@@ -55,13 +51,11 @@ export function useIcerikListesi() {
     }
   }, []);
 
-  // LocalStorage'ı her değişiklikte güncelle
   const listeGuncelle = (yeniListe) => {
     setIcerikListesi(yeniListe);
     localStorage.setItem(DEPOLAMA_ANAHTARI, JSON.stringify(yeniListe));
   };
 
-  // EKLE işlemi
   const icerikEkle = (yeniIcerik) => {
     const icerikId = Date.now().toString();
     const eklenecekIcerik = {
@@ -74,7 +68,6 @@ export function useIcerikListesi() {
     return eklenecekIcerik;
   };
 
-  // GÜNCELLE işlemi
   const icerikGuncelle = (guncelIcerik) => {
     const yeniListe = icerikListesi.map((icerik) =>
       icerik.id === guncelIcerik.id ? guncelIcerik : icerik
@@ -82,13 +75,11 @@ export function useIcerikListesi() {
     listeGuncelle(yeniListe);
   };
 
-  // SİL işlemi
   const icerikSil = (icerikId) => {
     const yeniListe = icerikListesi.filter((icerik) => icerik.id !== icerikId);
     listeGuncelle(yeniListe);
   };
 
-  // İSTATİSTİKLER
   const istatistikler = {
     toplamSayi: icerikListesi.length,
     izlenenSayi: icerikListesi.filter((i) => i.durum === "İzlendi").length,
@@ -97,11 +88,11 @@ export function useIcerikListesi() {
     ortalamaPuan:
       icerikListesi.filter((i) => i.puan > 0).length > 0
         ? (
-            icerikListesi
-              .filter((i) => i.puan > 0)
-              .reduce((t, i) => t + i.puan, 0) /
-            icerikListesi.filter((i) => i.puan > 0).length
-          ).toFixed(1)
+          icerikListesi
+            .filter((i) => i.puan > 0)
+            .reduce((t, i) => t + i.puan, 0) /
+          icerikListesi.filter((i) => i.puan > 0).length
+        ).toFixed(1)
         : "0",
   };
 

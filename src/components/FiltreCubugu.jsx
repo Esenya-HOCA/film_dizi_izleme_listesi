@@ -1,5 +1,3 @@
-// src/Components/FiltreCubugu.jsx
-// Arama ve filtreleme bileşeni
 
 import React from "react";
 import { KATEGORI_LISTESI, DURUM_LISTESI } from "../interfaces/IcerikArayuzu";
