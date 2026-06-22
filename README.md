@@ -8,3 +8,5 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ![Proje Ekran Görüntüsü](./images/image.png)
+
+## [Proje Netlify Linki](https://film-dizi-izleme-listesi.vercel.app/)
